@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  font-family: "Mont", "Poppins", "Inter", "Nunito", "Source Sans Pro",
+    sans-serif;
+}
+:root {
+  --darkblue-color: #343c6a;
+  --lightblue-color: #2d60ff;
+  --grey-color: #b1b1b1;
+}
+body {
+  display: grid;
+  grid-template-rows: 101px 1fr;
+  grid-template-columns: 2fr 5fr 4fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "navbar screen-name searchbar setting notification profile-pic"
+    "navbar main main main main main";
+  color: var(--darkblue-color);
+  align-items: center;
+}
+nav {
+  align-self: self-start;
+  display: flex;
+  flex-direction: column;
+  grid-area: navbar;
+}
+.web-name {
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.web-name h1 {
+  font-size: 25px;
+}
+.nav-items {
+  padding: 10px;
+  padding-left: 40px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+a {
+  text-decoration: none;
+  color: var(--grey-color);
+  font-size: 18px;
+}
+a:hover,
+a:active {
+  color: var(--lightblue-color);
+}
+.screen-name {
+  font-size: 28px;
+  grid-area: screen-name;
+}
+.searchbar {
+  grid-area: searchbar;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  padding: 10px;
+  width: 70%;
+  height: 35%;
+  gap: 10px;
+}
+.searchbar:hover,
+.searchbar:active {
+  border: 2px solid var(--grey-color);
+}
+.searchbar input {
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+}
+#setting {
+  grid-area: setting;
+}
+#notification {
+  grid-area: notification;
+}
+.profile-pic {
+  grid-area: profile-pic;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 2vw;
+}
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.nav-button button {
+  display: none;
+  width: 45px;
+  height: 45px;
+  font-size: 28px;
+}
+
+@media (max-width: 980px) {
+  body {
+    grid-template-columns: 2fr 3fr 4fr 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 830px) {
+  body {
+    grid-template-rows: 70px 70px auto;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas:
+      "nav-button screen-name profile-pic"
+      "searchbar searchbar searchbar"
+      "main main main";
+    justify-items: center;
+  }
+  .nav-button button {
+    grid-area: nav-button;
+    display: block;
+  }
+  nav {
+    display: none;
+  }
+  #setting {
+    display: none;
+  }
+  #notification {
+    display: none;
+  }
+}
