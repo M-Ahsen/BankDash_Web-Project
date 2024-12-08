@@ -6,98 +6,378 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/navigation.css">
     <link rel="stylesheet" href="CSS/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
     <title>BankDash-Dashboard</title>
 </head>
-<nav>
-    <div class="web-name">
-        <img src="Images/card-icon.png" alt="card-icon" width="36px" height="36px">
-        <h1>BankDash.</h1>
-    </div>
-    <div class="nav-items" id="Dashboard">
-        <img src="Images/nav/1.svg" alt="navitem-icon" width="25px" height="25px">
-        <a href="">Dashboard</a>
-    </div>
-    <div class="nav-items" id="Transactions">
-        <img src="Images/nav/2.svg" alt="navitem-icon" width="25px" height="25px">
-        <a href="">Transactions</a>
-    </div>
-    <div class="nav-items" id="Accounts">
-        <img src="Images/nav/3.svg" alt="navitem-icon" width="25px" height="25px">
-        <a href="">Accounts</a>
-    </div>
-    <div class="nav-items" id="Investments">
-        <img src="Images/nav/4.svg" alt="navitem-icon" width="25px" height="25px">
-        <a href="">Investments</a>
-    </div>
-    <div class="nav-items" id="Credit Cards">
-        <img src="Images/nav/5.svg" alt="navitem-icon" width="25px" height="25px">
-        <a href="">Credit Cards</a>
-    </div>
-    <div class="nav-items" id="Loans">
-        <img src="Images/nav/6.svg" alt="navitem-icon" width="25px" height="25px">
-        <a href="">Loans</a>
-    </div>
-    <div class="nav-items" id="Services">
-        <img src="Images/nav/7.svg" alt="navitem-icon" width="25px" height="25px">
-        <a href="">Services</a>
-    </div>
-    <div class="nav-items" id="My Privileges">
-        <img src="Images/nav/8.svg" alt="navitem-icon" width="25px" height="25px">
-        <a href="">My Privileges</a>
-    </div>
-    <div class="nav-items" id="Setting">
-        <img src="Images/nav/9.svg" alt="navitem-icon" width="25px" height="25px">
-        <a href="">Setting</a>
-    </div>
-</nav>
-<div class="nav-button">
-    <button>☰</button>
-</div>
-<div class="screen-name">
-    Overview
-</div>
-<div class="searchbar">
-    <label for="search">
-        <img src="Images/search-icon.png" alt="search-icon" width="19.14px" height="19.14px">
-    </label>
-    <input id="search" type="text" name="search" placeholder="Search for something">
-</div>
-<div class="header-icon" id="setting">
-    <img src="Images/setting-icon.png" width="25px" height="25px" alt="setting-icon">
-</div>
-<div class="header-icon" id="notification">
-    <img src="Images/notification-icon.png" width="25px" height="25px" alt="notification-icon">
-</div>
-<div class="profile-pic">
-    <img src="Images/pic.jpg" alt="profile-pic">
-</div>
-
-
-
-
-<main>
-    <div id="my-cards" class="screen-img">
-        <img src="Images/page1/My-Cards.png" alt="my-cards">
-    </div>
-    <div id="recent-transactions" class="screen-img">
-        <img src="Images/page1/Recent-Transaction.png" alt="recent-transactions">
-    </div>
-    <div id="weekly-activity" class="screen-img">
-        <img src="Images/page1/weekly-activity.png" alt="weekly-activity">
-    </div>
-    <div id="expence-statistics" class="screen-img">
-        <img src="Images/page1/Expense-Stats.png" alt="expence-statistics">
-    </div>
-    <div id="quick-transfer" class="screen-img">
-        <img src="Images/page1/Quick-transfer.png" alt="quick-transfer">
-    </div>
-    <div id="balance-history" class="screen-img">
-        <img src="Images/page1/Balance-History.png" alt="balance-history">
-    </div>
-</main>
 
 <body>
+    <!-- <<<<<<<<<<< Navbar >>>>>>>>>>>> -->
+    <nav>
+        <div class="web-name">
+            <img src="Images/nav/card-icon.png" alt="card-icon" width="36px" height="36px">
+            <h1>BankDash.</h1>
+        </div>
+        <div class="nav-items" id="Dashboard">
+            <img src="Images/nav/1.svg" alt="navitem-icon" width="25px" height="25px">
+            <a href="">Dashboard</a>
+        </div>
+        <div class="nav-items" id="Transactions">
+            <img src="Images/nav/2.svg" alt="navitem-icon" width="25px" height="25px">
+            <a href="">Transactions</a>
+        </div>
+        <div class="nav-items" id="Accounts">
+            <img src="Images/nav/3.svg" alt="navitem-icon" width="25px" height="25px">
+            <a href="">Accounts</a>
+        </div>
+        <div class="nav-items" id="Investments">
+            <img src="Images/nav/4.svg" alt="navitem-icon" width="25px" height="25px">
+            <a href="">Investments</a>
+        </div>
+        <div class="nav-items" id="Credit Cards">
+            <img src="Images/nav/5.svg" alt="navitem-icon" width="25px" height="25px">
+            <a href="">Credit Cards</a>
+        </div>
+        <div class="nav-items" id="Loans">
+            <img src="Images/nav/6.svg" alt="navitem-icon" width="25px" height="25px">
+            <a href="">Loans</a>
+        </div>
+        <div class="nav-items" id="Services">
+            <img src="Images/nav/7.svg" alt="navitem-icon" width="25px" height="25px">
+            <a href="">Services</a>
+        </div>
+        <div class="nav-items" id="My Privileges">
+            <img src="Images/nav/8.svg" alt="navitem-icon" width="25px" height="25px">
+            <a href="">My Privileges</a>
+        </div>
+        <div class="nav-items" id="Setting">
+            <img src="Images/nav/9.svg" alt="navitem-icon" width="25px" height="25px">
+            <a href="">Setting</a>
+        </div>
+    </nav>
+    <div class="nav-button">
+        <button>☰</button>
+    </div>
+    <div class="screen-name">
+        Overview
+    </div>
+    <div class="searchbar">
+        <label for="search">
+            <img src="Images/nav/search-icon.png" alt="search-icon" width="19.14px" height="19.14px">
+        </label>
+        <input id="search" type="text" name="search" placeholder="Search for something">
+    </div>
+    <div class="header-icon" id="setting">
+        <img src="Images/nav/setting-icon.png" width="25px" height="25px" alt="setting-icon">
+    </div>
+    <div class="header-icon" id="notification">
+        <img src="Images/nav/notification-icon.png" width="25px" height="25px" alt="notification-icon">
+    </div>
+    <div class="profile-pic">
+        <img src="Images/nav/pic.jpg" alt="profile-pic">
+    </div>
 
+
+    <!-- <<<<<<<<<<<< Main Dashboard div >>>>>>>>>>>>>>> -->
+
+    <main>
+        <!-- <<<<<< Card >>>>> -->
+        <div id="my-cards" class="screen-items flex">
+            <div id="left" class="flex">
+                <h2>My Cards</h2>
+                <div id="left-card" class="flex">
+                    <div class="rows" id="row1">
+                        <div>
+                            <p><span>Balance</span></p>
+                            <p>$5,756</p>
+                        </div>
+                        <img src="Images/page1/card/Chip_Card.png" width="50px" alt="Chip_Card">
+                    </div>
+                    <div class="rows" id="row2">
+                        <div>
+                            <p><span>CARD HOLDER</span></p>
+                            <p>Eddy Cusuma</p>
+                        </div>
+                        <div>
+                            <p><span>VALID THRU</span></p>
+                            <p>12/22</p>
+                        </div>
+                    </div>
+                    <div class="rows" id="row3">
+                        <div>
+                            3778 **** **** 1234
+                        </div>
+                        <img src="Images/page1/card/card-circles.png" alt="card-circles" width="40px">
+                    </div>
+                </div>
+            </div>
+            <div id="right" class="flex">
+                <p>See All</p>
+                <div id="right-card" class="flex">
+                    <div class="rows" id="row1">
+                        <div>
+                            <p><span>Balance</span></p>
+                            <p>$5,756</p>
+                        </div>
+                        <img src="Images/page1/card/Chip_Card (1).png" width="50px" alt="Chip_Card">
+                    </div>
+                    <div class="rows" id="row2">
+                        <div>
+                            <p><span>CARD HOLDER</span></p>
+                            <p>Eddy Cusuma</p>
+                        </div>
+                        <div>
+                            <p><span>VALID THRU</span></p>
+                            <p>12/22</p>
+                        </div>
+                    </div>
+                    <div class="rows" id="row3">
+                        <div>
+                            3778 **** **** 1234
+                        </div>
+                        <img src="Images/page1/card/card-circle.png" alt="card-circles" width="40px">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="recent-transactions" class="screen-items flex-col">
+            <h2>Recent Transaction</h2>
+            <div class="flex-col">
+                <div class="rows flex" id="row1">
+                    <div class="flex-center">
+                        <div class="flex-center">
+                            <img src="Images/page1/transaction/1.png" alt="img">
+                        </div>
+                    </div>
+                    <div class="flex-col">
+                        <p>Deposit from my Card</p>
+                        <p><span>28 January 2021</span></p>
+                    </div>
+                    <div class="flex">
+                        <p>-$850</p>
+                    </div>
+                </div>
+                <div class="rows flex" id="row2">
+                    <div class="flex-center">
+                        <div class="flex-center">
+                            <img src="Images/page1/transaction/2.png" alt="img">
+                        </div>
+                    </div>
+                    <div class="flex-col">
+                        <p>Deposit Paypal</p>
+                        <p><span>25 January 2021</span></p>
+                    </div>
+                    <div class="flex">
+                        <p>+$2,500</p>
+                    </div>
+                </div>
+                <div class="rows flex" id="row3">
+                    <div class="flex-center">
+                        <div class="flex-center">
+                            <img src="Images/page1/transaction/3.png" alt="img">
+                        </div>
+                    </div>
+                    <div class="flex-col">
+                        <p>Jemi Wilson</p>
+                        <p><span>21 January 2021</span></p>
+                    </div>
+                    <div class="flex">
+                        <p>+$5,400</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="weekly-activity" class="screen-items">
+            <h2>Weekly Activity</h2>
+            <div>
+                <canvas id="weeklyActivityChart"></canvas>
+            </div>
+        </div>
+        <div id="expence-statistics" class="screen-items">
+            <h2>Expense Statistics</h2>
+            <div class="flex-center">
+                <canvas id="expenseChart"></canvas>
+            </div>
+        </div>
+        <div id="quick-transfer" class="screen-items">
+            <h2>Quick Transfer</h2>
+            <div class="flex-col">
+                <div id="top" class="flex">
+                    <div id="profiles" class="flex">
+                        <div class="flex-col">
+                            <div>
+                                <img src="Images/page1/quick-transfer/1.png" alt="pic">
+                            </div>
+                            <p>Livia Bator</p>
+                            <p><span>CEO</span></p>
+                        </div>
+                        <div class="flex-col">
+                            <div>
+                                <img src="Images/page1/quick-transfer/2.png" alt="pic">
+                            </div>
+                            <p>Randy Press</p>
+                            <p><span>Director</span></p>
+                        </div>
+                        <div class="flex-col">
+                            <div>
+                                <img src="Images/page1/quick-transfer/3.png" alt="pic">
+                            </div>
+                            <p>Workman</p>
+                            <p><span>Designer</span></p>
+                        </div>
+                    </div>
+                    <div id="profiles-button" class="flex-center">
+                        <p>></p>
+                    </div>
+                </div>
+                <div id="bottom" class="flex">
+                    <div class="flex-center">
+                        <p>Write Amount</p>
+                    </div>
+                    <div class="flex-center">
+                        <p>525.50</p>
+                    </div>
+                    <div class="flex-center">
+                        <div id="button" class="flex-center">
+                            <p>Send</p>
+                            <img src="Images/page1/quick-transfer/send.png" alt="icon">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="balance-history" class="screen-items">
+            <h2>Balance History</h2>
+            <div>
+                <canvas id="balanceHistoryChart"></canvas>
+            </div>
+        </div>
+    </main>
+    <script>
+
+        const ctx = document.getElementById('weeklyActivityChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+                datasets: [
+                    {
+                        label: 'Deposit',
+                        backgroundColor: 'cyan',
+                        data: [400, 200, 300, 450, 100, 200, 300]
+                    },
+                    {
+                        label: 'Withdraw',
+                        backgroundColor: 'blue',
+                        data: [100, 150, 200, 350, 250, 300, 400]
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false, // Full area  
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: {
+                        align: 'end', // Align to the right  
+                        labels: {
+                            color: 'black',
+                            usePointStyle: true, // Use point style  
+                            pointStyle: 'circle', // Circle style  
+                            padding: 20 // Space between items  
+                        }
+                    }
+                }
+            }
+        });
+
+        const ctx1 = document.getElementById('expenseChart').getContext('2d');
+        // Create the chart for expence
+        const expenseChart = new Chart(ctx1, {
+            type: 'pie', // Chart type
+            data: {
+                labels: ['Entertainment', 'Bill Expense', 'Investment', 'Others'], // Labels for reference (not shown)
+                datasets: [{
+                    data: [30, 15, 20, 35], // Data values for each slice
+                    backgroundColor: ['#2C2C6D', '#FF7C2A', '#FF4FD8', '#736EFE'], // Slice colors
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                rotation: -55, // Rotate the chart 90 degrees (in radians)
+                plugins: {
+                    legend: {
+                        display: false // Hides the legend
+                    },
+                    datalabels: {
+                        color: '#FFFFFF',
+                        font: {
+                            size: 8,
+                            weight: 'bold'
+                        },
+                        anchor: 'center',
+                        align: 'center',
+                        padding: 5, // Adds padding around the text
+                        offset: 0, // Moves the text away from the center
+                        formatter: (value, ctx1) => {
+                            const label = ctx1.chart.data.labels[ctx1.dataIndex];
+                            return `${value}%\n${label}`;
+                        }
+                    }
+                }
+            },
+            plugins: [ChartDataLabels] // Activate the datalabels plugin
+        });
+
+        const ctx2 = document.getElementById('balanceHistoryChart').getContext('2d');
+
+        const balanceHistoryChart = new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan'],
+                datasets: [{
+                    label: 'Balance',
+                    data: [200, 400, 300, 800, 600, 700, 400],
+                    borderColor: 'blue',
+                    backgroundColor: 'rgba(0, 0, 255, 0.1)', // Light blue fill  
+                    borderWidth: 2,
+                    fill: true,
+                    tension: 0.4 // Smooth line  
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: '#e0e0e0' // Light gray grid lines  
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false // Hide x-axis grid lines  
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false // Hide legend  
+                    },
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false
+                    }
+                }
+            }
+        });  
+    </script>
 </body>
 
 </html>

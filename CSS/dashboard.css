@@ -10,33 +10,260 @@ main {
   width: 100%;
   height: 100%;
 }
-.screen-img {
-  margin: 10px;
-}
-.screen-img img {
+.screen-items {
+  padding: 10px;
   width: 100%;
-  height: 100%;
-  object-fit: fill;
-  object-position: center;
+  height: 280px;
 }
+/* <<<<<<<<<<<<<<<<<<< MY-Card >>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 #my-cards {
+  text-wrap: nowrap;
   grid-area: my-cards;
+  gap: 5%;
 }
+#my-cards .flex {
+  flex-direction: column;
+  justify-content: space-between;
+  display: flex;
+}
+#my-cards > #left {
+  width: 50%;
+  height: 100%;
+}
+#left-card {
+  background-color: blue;
+  border-radius: 20px;
+  height: 80%;
+  width: 100%;
+  flex: 1 1 1;
+}
+#left-card .rows {
+  height: 100%;
+  display: flex;
+  color: white;
+  span {
+    color: rgb(185, 184, 184);
+    font-size: 12px;
+  }
+  padding: 0 20px;
+  align-items: center;
+  div p {
+    padding: 5px 0;
+  }
+}
+#left-card .rows#row1 span {
+  color: white;
+}
+#left-card #row1,
+#row3 {
+  justify-content: space-between;
+}
+#left-card #row2 {
+  gap: 15%;
+}
+#my-cards > #right {
+  width: 50%;
+  height: 100%;
+  align-items: flex-end;
+}
+#right-card {
+  background-color: rgb(230, 230, 230);
+  border-radius: 20px;
+  height: 80%;
+  width: 100%;
+}
+#right-card .rows {
+  height: 100%;
+  display: flex;
+  span {
+    color: rgb(185, 184, 184);
+    font-size: 12px;
+  }
+  padding: 0 20px;
+  align-items: center;
+  div p {
+    padding: 5px 0;
+  }
+}
+#right-card #row1,
+#row3 {
+  justify-content: space-between;
+}
+#right-card #row2 {
+  gap: 15%;
+}
+
+/* <<<<<<<<<<<<<<<<<<< Recent Transaction >>>>>>>>>>>>>>>>>>>> */
+
 #recent-transactions {
+  text-wrap: nowrap;
   grid-area: recent-transactions;
+  p {
+    font-weight: 600;
+  }
+  span {
+    font-weight: 100;
+    color: #718ebf;
+  }
 }
+#recent-transactions > div {
+  width: 100%;
+  height: 90%;
+}
+#recent-transactions > div > .rows {
+  flex: 1;
+}
+#recent-transactions > div > .rows > :nth-child(1) > div {
+  background-color: #e7edff;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+}
+#recent-transactions > div > #row1 > :nth-child(1) > div {
+  background-color: #fff5d9;
+}
+#recent-transactions > div > .rows > :nth-child(1) img {
+  width: 28px;
+  height: 28px;
+}
+#recent-transactions > div > .rows > :nth-child(2) {
+  width: 200px;
+  justify-content: center;
+  gap: 3px;
+}
+#recent-transactions > div > .rows > :nth-child(3) {
+  flex: 1;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* <<<<<< Weekly Activity >>>>>> */
+
 #weekly-activity {
   grid-area: weekly-activity;
+  height: 300px;
+  width: 100%;
+  color: #718ebf;
+  h2 {
+    color: var(--darkblue-color);
+  }
 }
+#weekly-activity > div {
+  width: 100%;
+  height: 90%;
+}
+#weeklyActivityChart {
+  width: 100%;
+  height: 100%;
+}
+
+/* <<<<<< Expence Statistics >>>>>> */
+
 #expence-statistics {
   grid-area: expence-statistics;
+  height: 300px;
 }
+#expence-statistics > div {
+  width: 100%;
+  height: 90%;
+  padding: 5%;
+}
+
+/* <<<<<< Quick transfer >>>>>> */
+
 #quick-transfer {
   grid-area: quick-transfer;
 }
+#quick-transfer > h2 {
+  margin-bottom: 15px;
+}
+#quick-transfer > .flex-col {
+  width: 100%;
+  height: 80%;
+}
+#quick-transfer > .flex-col > #top {
+  flex: 2;
+  #profiles-button {
+    font-size: 28px;
+    color: #718ebf;
+  }
+}
+#quick-transfer > .flex-col > #top > #profiles {
+  height: 100%;
+  width: 80%;
+}
+#quick-transfer > .flex-col > #top > #profiles > .flex-col {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  div {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+  }
+  div > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  p {
+    color: black;
+    text-align: center;
+  }
+  p > span {
+    color: #718ebf;
+  }
+}
+#quick-transfer > .flex-col > #top > #profiles-button {
+  height: 100%;
+  width: 20%;
+}
+#quick-transfer > .flex-col > #bottom {
+  flex: 1;
+}
+#quick-transfer > .flex-col > #bottom > .flex-center {
+  flex: 1;
+  p {
+    color: #718ebf;
+    font-size: 18px;
+  }
+  #button {
+    width: 90%;
+    height: 70%;
+    background-color: #1814f3;
+    gap: 5px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    p {
+      color: white;
+    }
+  }
+  #button:hover {
+    box-shadow: 2px 2px 5px #1814f3, 0px 0px 20px rgba(255, 255, 255, 0.5); /* Enhanced shadows */
+    transform: scale(1.05); /* Slightly increase size */
+    background-color: #0c0a95;
+  }
+}
+
+/* <<<<<<  Balance Hostory */
+
 #balance-history {
   grid-area: balance-history;
 }
+#balance-history > div {
+  width: 100%;
+  height: 90%;
+}
+#balanceHistoryChart {
+  width: 100%;
+  height: 100%;
+}
+
+/* <<<<<< Media Queries >>>>>> */
 
 @media (max-width: 500px) {
   main {
@@ -51,17 +278,15 @@ main {
       "balance-history";
     overflow-x: hidden;
   }
-  .screen-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-    object-position: center;
-  }
-  #my-cards img {
-    object-fit: cover;
-    object-position: left;
-  }
   #my-cards {
-    width: 500px;
+    width: 640px;
+  }
+  #my-cards > #right > p {
+    position: absolute;
+    right: 22px;
+    top: 166px;
+  }
+  #my-cards > #right {
+    justify-content: flex-end;
   }
 }
