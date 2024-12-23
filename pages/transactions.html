@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/navigation.css">
+    <link rel="stylesheet" href="../CSS/transactions.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <title>BankDash-Transactions</title>
+</head>
+
+<body>
+    <!-- <<<<<<<<<<< Navbar >>>>>>>>>>>> -->
+    <nav>
+        <div class="web-name">
+            <img src="../../Images/nav/card-icon.png" alt="card-icon" width="36px" height="36px">
+            <h1>BankDash.</h1>
+        </div>
+        <div class="nav-items" id="Dashboard">
+            <img src="../Images/nav/1.svg" alt="navitem-icon" width="25px" height="25px">
+            <a href="../index.html">Dashboard</a>
+        </div>
+        <div class="nav-items" id="Transactions">
+            <img src="../Images/nav/2.svg" alt="navitem-icon" width="25px" height="25px">
+            <a href="/">Transactions</a>
+        </div>
+        <div class="nav-items" id="Accounts">
+            <img src="../Images/nav/3.svg" alt="navitem-icon" width="25px" height="25px">
+            <a href="">Accounts</a>
+        </div>
+        <div class="nav-items" id="Investments">
+            <img src="../Images/nav/4.svg" alt="navitem-icon" width="25px" height="25px">
+            <a href="">Investments</a>
+        </div>
+        <div class="nav-items" id="Credit Cards">
+            <img src="../Images/nav/5.svg" alt="navitem-icon" width="25px" height="25px">
+            <a href="">Credit Cards</a>
+        </div>
+        <div class="nav-items" id="Loans">
+            <img src="../Images/nav/6.svg" alt="navitem-icon" width="25px" height="25px">
+            <a href="">Loans</a>
+        </div>
+        <div class="nav-items" id="Services">
+            <img src="../Images/nav/7.svg" alt="navitem-icon" width="25px" height="25px">
+            <a href="">Services</a>
+        </div>
+        <div class="nav-items" id="My Privileges">
+            <img src="../Images/nav/8.svg" alt="navitem-icon" width="25px" height="25px">
+            <a href="">My Privileges</a>
+        </div>
+        <div class="nav-items" id="Setting">
+            <img src="../Images/nav/9.svg" alt="navitem-icon" width="25px" height="25px">
+            <a href="">Setting</a>
+        </div>
+    </nav>
+    <div class="nav-button">
+        <button>☰</button>
+    </div>
+    <div class="screen-name">
+        Transactions
+    </div>
+    <div class="searchbar">
+        <label for="search">
+            <img src="../Images/nav/search-icon.png" alt="search-icon" width="19.14px" height="19.14px">
+        </label>
+        <input id="search" type="text" name="search" placeholder="Search for something">
+    </div>
+    <div class="header-icon" id="setting">
+        <img src="../Images/nav/setting-icon.png" width="25px" height="25px" alt="setting-icon">
+    </div>
+    <div class="header-icon" id="notification">
+        <img src="../Images/nav/notification-icon.png" width="25px" height="25px" alt="notification-icon">
+    </div>
+    <div class="profile-pic">
+        <img src="../Images/nav/pic.jpg" alt="profile-pic">
+    </div>
+
+
+    <!-- <<<<<<<<<<<< Main Dashboard div >>>>>>>>>>>>>>> -->
+
+    <main>
+        <!-- <<<<<< Card >>>>> -->
+        <div id="my-cards" class="screen-items flex">
+            <div id="left" class="flex">
+                <h2>My Cards</h2>
+                <div id="left-card" class="flex">
+                    <div class="rows" id="row1">
+                        <div>
+                            <p><span>Balance</span></p>
+                            <p>$5,756</p>
+                        </div>
+                        <img src="../Images/page1/card/Chip_Card.png" width="50px" alt="Chip_Card">
+                    </div>
+                    <div class="rows" id="row2">
+                        <div>
+                            <p><span>CARD HOLDER</span></p>
+                            <p>Eddy Cusuma</p>
+                        </div>
+                        <div>
+                            <p><span>VALID THRU</span></p>
+                            <p>12/22</p>
+                        </div>
+                    </div>
+                    <div class="rows" id="row3">
+                        <div>
+                            3778 **** **** 1234
+                        </div>
+                        <img src="../Images/page1/card/card-circles.png" alt="card-circles" width="40px">
+                    </div>
+                </div>
+            </div>
+            <div id="right" class="flex">
+                <p>+ Add Card</p>
+                <div id="right-card" class="flex">
+                    <div class="rows" id="row1">
+                        <div>
+                            <p><span>Balance</span></p>
+                            <p>$5,756</p>
+                        </div>
+                        <img src="../Images/page1/card/Chip_Card (1).png" width="50px" alt="Chip_Card">
+                    </div>
+                    <div class="rows" id="row2">
+                        <div>
+                            <p><span>CARD HOLDER</span></p>
+                            <p>Eddy Cusuma</p>
+                        </div>
+                        <div>
+                            <p><span>VALID THRU</span></p>
+                            <p>12/22</p>
+                        </div>
+                    </div>
+                    <div class="rows" id="row3">
+                        <div>
+                            3778 **** **** 1234
+                        </div>
+                        <img src="../Images/page1/card/card-circle.png" alt="card-circles" width="40px">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="my-expence" class="screen-items">
+            <h2>Recent Transaction</h2>
+            <div class="flex-center">
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
+        <div id="recent-transactions" class="screen-items">
+            <h2>Weekly Activity</h2>
+            <div class="flex">
+                <p>All Transactions</p>
+                <p>Income</p>
+                <p>Expense</p>
+            </div>
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Transaction ID</th>
+                            <th>Type</th>
+                            <th>Card</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>Receipt</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="flex">
+                                <img src="../Images/page2/table/expence.png" alt="icon" width="30px">
+                                Spotify Subscription
+                            </td>
+                            <td>#12548796</td>
+                            <td>Shopping</td>
+                            <td>1234 ****</td>
+                            <td>28 Jan, 12.30 AM</td>
+                            <td id="expence">-$2,500</td>
+                            <td>Download</td>
+                        </tr>
+                        <tr>
+                            <td class="flex">
+                                <img src="../Images/page2/table/income.png" alt="icon" width="30px">
+                                Freepik Sales
+                            </td>
+                            <td>#12548796</td>
+                            <td>Transfer</td>
+                            <td>1234 ****</td>
+                            <td>27 Jan, 12.30 AM</td>
+                            <td id="income">+$750</td>
+                            <td>Download</td>
+                        </tr>
+                        <tr>
+                            <td class="flex">
+                                <img src="../Images/page2/table/expence.png" alt="icon" width="30px">
+                                Mobile Service
+                            </td>
+                            <td>#12548796</td>
+                            <td>Service</td>
+                            <td>1234 ****</td>
+                            <td>22 Jan, 12.30 AM</td>
+                            <td id="expence">-$150</td>
+                            <td>Download</td>
+                        </tr>
+                        <tr>
+                            <td class="flex">
+                                <img src="../Images/page2/table/expence.png" alt="icon" width="30px">
+                                Wilson
+                            </td>
+                            <td>#12548796</td>
+                            <td>Transfer</td>
+                            <td>1234 ****</td>
+                            <td>21 Jan, 12.30 AM</td>
+                            <td id="expence">-$1050</td>
+                            <td>Download</td>
+                        </tr>
+                        <tr>
+                            <td class="flex">
+                                <img src="../Images/page2/table/income.png" alt="icon" width="30px">
+                                Emilly
+                            </td>
+                            <td>#12548796</td>
+                            <td>Transfer</td>
+                            <td>1234 ****</td>
+                            <td>20 Jan, 12.30 AM</td>
+                            <td id="income">+$840</td>
+                            <td>Download</td>
+                        </tr>
+                        <tr>
+                            <td class="flex">
+                                <img src="../Images/page2/table/expence.png" alt="icon" width="30px">
+                                Spotify Subscription
+                            </td>
+                            <td>#12548796</td>
+                            <td>Shopping</td>
+                            <td>1234 ****</td>
+                            <td>18 Jan, 12.30 AM</td>
+                            <td id="expence">-$2,500</td>
+                            <td>Download</td>
+                        </tr>
+                        <tr>
+                            <td class="flex">
+                                <img src="../Images/page2/table/expence.png" alt="icon" width="30px">
+                                Spotify Subscription
+                            </td>
+                            <td>#12548796</td>
+                            <td>Shopping</td>
+                            <td>1234 ****</td>
+                            <td>28 Jan, 12.30 AM</td>
+                            <td id="expence">-$2,500</td>
+                            <td>Download</td>
+                        </tr>
+                        <tr>
+                            <td class="flex">
+                                <img src="../Images/page2/table/expence.png" alt="icon" width="30px">
+                                Spotify Subscription
+                            </td>
+                            <td>#12548796</td>
+                            <td>Shopping</td>
+                            <td>1234 ****</td>
+                            <td>28 Jan, 12.30 AM</td>
+                            <td id="expence">-$2,500</td>
+                            <td>Download</td>
+                        </tr>
+                        <tr>
+                            <td class="flex">
+                                <img src="../Images/page2/table/expence.png" alt="icon" width="30px">
+                                Spotify Subscription
+                            </td>
+                            <td>#12548796</td>
+                            <td>Shopping</td>
+                            <td>1234 ****</td>
+                            <td>28 Jan, 12.30 AM</td>
+                            <td id="expence">-$2,500</td>
+                            <td>Download</td>
+                        </tr>
+                        <tr>
+                            <td class="flex">
+                                <img src="../Images/page2/table/expence.png" alt="icon" width="30px">
+                                Spotify Subscription
+                            </td>
+                            <td>#12548796</td>
+                            <td>Shopping</td>
+                            <td>1234 ****</td>
+                            <td>28 Jan, 12.30 AM</td>
+                            <td id="expence">-$2,500</td>
+                            <td>Download</td>
+                        </tr>
+                        <tr>
+                            <td class="flex">
+                                <img src="../Images/page2/table/expence.png" alt="icon" width="30px">
+                                Spotify Subscription
+                            </td>
+                            <td>#12548796</td>
+                            <td>Shopping</td>
+                            <td>1234 ****</td>
+                            <td>28 Jan, 12.30 AM</td>
+                            <td id="expence">-$2,500</td>
+                            <td>Download</td>
+                        </tr>
+                        <tr>
+                            <td class="flex">
+                                <img src="../Images/page2/table/expence.png" alt="icon" width="30px">
+                                Spotify Subscription
+                            </td>
+                            <td>#12548796</td>
+                            <td>Shopping</td>
+                            <td>1234 ****</td>
+                            <td>28 Jan, 12.30 AM</td>
+                            <td id="expence">-$2,500</td>
+                            <td>Download</td>
+                        </tr>
+                        <tr>
+                            <td class="flex">
+                                <img src="../Images/page2/table/expence.png" alt="icon" width="30px">
+                                Spotify Subscription
+                            </td>
+                            <td>#12548796</td>
+                            <td>Shopping</td>
+                            <td>1234 ****</td>
+                            <td>28 Jan, 12.30 AM</td>
+                            <td id="expence">-$2,500</td>
+                            <td>Download</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="button-container" class="screen-items flex-center">
+            <div id="previous-button" class="flex-center">
+                <p>
+                    < previous </p>
+            </div>
+            <div id="table-pages" class="flex">
+                <p>1</p>
+                <p>2</p>
+                <p>3</p>
+                <p>4</p>
+                <p>5</p>
+            </div>
+            <div id="next-button" class="flex-center">
+                <p>
+                    next >
+                </p>
+            </div>
+        </div>
+    </main>
+    <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan'],
+                datasets: [{
+                    label: 'Revenue',
+                    data: [9000, 6000, 7000, 8000, 12500, 5000], // Data for each month  
+                    backgroundColor: [
+                        'rgba(204, 204, 204, 0.5)',
+                        'rgba(204, 204, 204, 0.5)',
+                        'rgba(204, 204, 204, 0.5)',
+                        'rgba(204, 204, 204, 0.5)',
+                        'rgba(0, 255, 255, 1)', // Highlight Dec  
+                        'rgba(204, 204, 204, 0.5)',
+                    ],
+                    borderColor: [
+                        'rgba(0, 0, 0, 1)',
+                        'rgba(0, 0, 0, 1)',
+                        'rgba(0, 0, 0, 1)',
+                        'rgba(0, 0, 0, 1)',
+                        'rgba(0, 0, 0, 1)',
+                        'rgba(0, 0, 0, 1)',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Revenue ($)'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function (tooltipItem) {
+                                return '$' + tooltipItem.raw;
+                            }
+                        }
+                    }
+                }
+            }
+        });  
+    </script>
+</body>
+
+</html>
